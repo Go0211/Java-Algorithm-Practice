@@ -2,11 +2,11 @@ package algorithm210703;
 
 import java.util.Scanner;
 
-//두 배열이 같은 지 판단
-public class ExampleAlgorithm7 {
+//b배열의 요소들을 a배열에 서순에 맞게 복사
+public class Problem4 {
     static Scanner scan = new Scanner(System.in);
 
-
+    //메인
     public static void main(String[] args) {
         System.out.print("첫 번째 원하는 배열의 크기를 정해주세요 : ");
         int a = scan.nextInt();
@@ -16,31 +16,27 @@ public class ExampleAlgorithm7 {
         int b = scan.nextInt();
         int[] bb = insertArrayElement(b);
 
-        boolean c = arrayEqualJudgement(aa, bb);
+        copy(aa, bb);
 
-        if (c == true) {
-            System.out.println("두 배열은 같습니다");
-        } else {
-            System.out.println("두 배열은 같지 않습니다.");
+        System.out.println("완료했습니다");
+        for (int i = 0; i < aa.length; i++) {
+            System.out.print(aa[i]);
+        }
+        System.out.println();
+
+        for (int i = 0; i < bb.length; i++) {
+            System.out.print(bb[i]);
         }
     }
 
-    static boolean arrayEqualJudgement(int[] a, int b[]) {
-        boolean check = true;
-
-        if (a.length != b.length) {
-            check = false;
-        } else {
-            for (int i = 0; i < a.length; i++) {
-                if (a[i] != b[i]) {
-                    check = false;
-                }
-            }
+    //b배열를 a배열에 복사
+    static void copy(int[] a, int[] b) {
+        for (int i = 0; i < b.length; i++) {
+            a[i] = b[i];
         }
-
-        return check;
     }
 
+    //배열안 요소에 값 넣기
     static int[] insertArrayElement(int a) {
         int[] result = new int[a];
 

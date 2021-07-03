@@ -9,40 +9,40 @@ public class Problem4 {
     //메인
     public static void main(String[] args) {
         System.out.print("첫 번째 원하는 배열의 크기를 정해주세요 : ");
-        int a = scan.nextInt();
-        int[] aa = insertArrayElement(a);
+        int arraySizeOne = scan.nextInt();
+        int[] arrayOne = insertArrayElement(arraySizeOne);
 
         System.out.print("두 번째 원하는 배열의 크기를 정해주세요 : ");
-        int b = scan.nextInt();
-        int[] bb = insertArrayElement(b);
+        int arraySizeTwo = scan.nextInt();
+        int[] arrayTwo = insertArrayElement(arraySizeTwo);
 
-        copy(aa, bb);
+        copy(arrayOne, arrayTwo);
 
         System.out.println("완료했습니다");
-        for (int i = 0; i < aa.length; i++) {
-            System.out.print(aa[i]);
+        for (int imsiNum = 0; imsiNum < arrayOne.length; imsiNum++) {
+            System.out.print(arrayOne[imsiNum]);
         }
         System.out.println();
 
-        for (int i = 0; i < bb.length; i++) {
-            System.out.print(bb[i]);
+        for (int imsiNum = 0; imsiNum < arrayTwo.length; imsiNum++) {
+            System.out.print(arrayTwo[imsiNum]);
         }
     }
 
     //b배열를 a배열에 복사
-    static void copy(int[] a, int[] b) {
-        for (int i = 0; i < b.length; i++) {
-            a[i] = b[i];
+    static void copy(int[] arrayOne, int[] arrayTwo) {
+        for (int imsiNum = 0; imsiNum < arrayTwo.length; imsiNum++) {
+            arrayOne[imsiNum] = arrayTwo[imsiNum];
         }
     }
 
     //배열안 요소에 값 넣기
-    static int[] insertArrayElement(int a) {
-        int[] result = new int[a];
+    static int[] insertArrayElement(int num) {
+        int[] result = new int[num];
 
-        for (int i = 0; i < result.length; i++) {
-            System.out.print((i+1) + "번째의 요소 값을 입력해주세요 : ");
-            result[i] = scan.nextInt();
+        for (int imsiNum = 0; imsiNum < result.length; imsiNum++) {
+            System.out.print((imsiNum+1) + "번째의 요소 값을 입력해주세요 : ");
+            result[imsiNum] = scan.nextInt();
         }
 
         return result;

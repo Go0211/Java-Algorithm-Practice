@@ -1,9 +1,7 @@
-package algorithm0702;
+package algorithm210702;
 
-import java.util.Scanner;
-
-//구구단 만들기
-public class Problem10 {
+//곱셈 대신 덧셈으로 구성
+public class Problem11 {
     public static void main(String[] args) {
         System.out.print("  |");
 
@@ -19,7 +17,7 @@ public class Problem10 {
             System.out.print((secImsiNumber) + "|");
 
             for (int thiImsiNumber = 1; thiImsiNumber <= 9; thiImsiNumber++) {
-                System.out.print((secImsiNumber *thiImsiNumber) + " ");
+                System.out.print((secImsiNumber+thiImsiNumber) + " ");
             }
         }
     }

@@ -4,15 +4,15 @@ package algorithm210704;
 public class ExampleAlgorithm3 {
     public static void main(String[] args) {
         int counter = 0;
-        int ptr = 0;
+        int primeIndex = 0;
         int[] prime = new int[500];
 
-        prime[ptr++] = 2;
+        prime[primeIndex++] = 2;
 
         for (int n = 3; n < 1000; n++) {
             int i;
 
-            for (i = 1; i < ptr; i++) {
+            for (i = 1; i < primeIndex; i++) {
                 counter++;
 
                 if (n % prime[i] == 0) {
@@ -20,11 +20,11 @@ public class ExampleAlgorithm3 {
                 }
             }
 
-            if (ptr == i)
-                prime[ptr++] = n;
+            if (primeIndex == i)
+                prime[primeIndex++] = n;
         }
 
-        for (int i = 0; i < ptr; i++) {
+        for (int i = 0; i < primeIndex; i++) {
             System.out.println(prime[i]);
         }
 

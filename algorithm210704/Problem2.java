@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 //날짜 계산하는 알고리즘
 public class Problem2 {
+    static final int YES = 1;
+    static final int NO = 0;
 
     //메인
     public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class Problem2 {
 
             System.out.print("한 번 더? (1. yes / 0. no) : ");
             retry = scan.nextInt();
-        } while(retry == 1);
+        } while(retry == YES);
     }
 
     //2차원 배열(평년 + 윤년)
@@ -36,19 +38,19 @@ public class Problem2 {
     //윤년판독
     static int isLeap(int year) {
         if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
-            return 1;
+            return YES;
         } else {
-            return 0;
+            return NO;
         }
     }
 
     //날짜 계산 (해당 메소드에 만드는 변수 없이)
-    static int dayOfYear(int y, int m, int d) {
-        while(m > 1) {
-            d += mDay[isLeap(y)][m-1];
-            m--;
+    static int dayOfYear(int year, int month, int day) {
+        while(month > 1) {
+            day += mDay[isLeap(year)][month-1];
+            month--;
         }
 
-        return d;
+        return day;
     }
 }

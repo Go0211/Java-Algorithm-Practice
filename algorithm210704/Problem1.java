@@ -3,32 +3,32 @@ package algorithm210704;
 import java.util.Scanner;
 
 public class Problem1 {
+    //메인
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int no, cd, dno, retry;
-        char[] cno = new char[32];
+        int dNum, changeNum, index, retry;
+        char[] changeDNum = new char[32];
 
         System.out.println("10진수를 기수 변환합니다.");
 
         do {
             do {
                 System.out.print("변환하는 음이 아닌 정수");
-                no = scan.nextInt();
-            } while(no < 0);
+                dNum = scan.nextInt();
+            } while (dNum < 0);
 
             do {
                 System.out.print("변환하고 싶은 진수 (2~36) : ");
-                cd = scan.nextInt();
-            } while(cd < 2 || cd > 36);
+                changeNum = scan.nextInt();
+            } while (changeNum < 2 || changeNum > 36);
 
-            dno = cardConvR(no, cd, cno);
+            index = cardConvR(dNum, changeNum, changeDNum);
 
-            System.out.print(cd + "진수로는 ");
-            for (int i = dno - 1; i >= 0; i--) {
-                System.out.print(cno[i]);
+            System.out.print(changeNum + "진수로는 ");
+            for (int i = index - 1; i >= 0; i--) {
+                System.out.print(changeDNum[i]);
             }
             System.out.print("입니다.");
-
 
             System.out.print("한번 더 (1. 예 / 0. 아니요)");
             retry = scan.nextInt();
@@ -36,20 +36,20 @@ public class Problem1 {
     }
 
     //주어진 값을 주어진 진수로 기수변환 (윗자리가 우선적으로 삽입)
-    static int cardConvR(int x, int r, char[] d) {
-        int digits = 0;
-        char[] dCopy = d.clone();
+    static int cardConvR(int dNum, int changeNum, char[] changeDNum) {
+        int count = 0;
+        char[] dCopy = changeDNum.clone();
         String dChar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         do {
-            dCopy[digits++] = dChar.charAt(x % r);
-            x /= r;
-        } while (x != 0);
+            dCopy[count++] = dChar.charAt(dNum % changeNum);
+            dNum /= changeNum;
+        } while (dNum != 0);
 
-        for (int i = 0; i < digits; i++) {
-            d[i] = dCopy[digits - (i+1)];
+        for (int i = 0; i < count; i++) {
+            changeDNum[i] = dCopy[count - (i+1)];
         }
 
-        return digits;
+        return count;
     }
 }

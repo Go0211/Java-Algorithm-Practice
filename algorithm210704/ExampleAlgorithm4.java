@@ -4,11 +4,11 @@ package algorithm210704;
 public class ExampleAlgorithm4 {
     public static void main(String[] args) {
         int counter = 0;
-        int ptr = 0;
+        int primeIndex = 0;
         int[] prime = new int[500];
 
-        prime[ptr++] = 2;
-        prime[ptr++] = 3;
+        prime[primeIndex++] = 2;
+        prime[primeIndex++] = 3;
 
         for (int n = 5; n < 1000; n += 2) {
             boolean flag = false;
@@ -23,12 +23,12 @@ public class ExampleAlgorithm4 {
             }
 
             if (!flag) {
-                prime[ptr++] = n;
+                prime[primeIndex++] = n;
                 counter++;
             }
         }
 
-        for (int i = 0; i < ptr; i++) {
+        for (int i = 0; i < primeIndex; i++) {
             System.out.println(prime[i]);
         }
 

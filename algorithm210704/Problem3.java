@@ -3,6 +3,8 @@ package algorithm210704;
 import java.util.Scanner;
 
 public class Problem3 {
+    static final int YES = 1;
+    static final int NO = 0;
 
     //메인
     public static void main(String[] args) {
@@ -23,7 +25,7 @@ public class Problem3 {
 
             System.out.print("한 번 더? (1. yes / 0. no) : ");
             retry = scan.nextInt();
-        } while(retry == 1);
+        } while(retry == YES);
     }
 
     //2차원 배열(평년 + 윤년)
@@ -35,18 +37,18 @@ public class Problem3 {
     //윤년판독
     static int isLeap(int year) {
         if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
-            return 1;
+            return YES;
         } else {
-            return 0;
+            return NO;
         }
     }
 
     //날짜 계산 (남은 날 계산)
-    static int leftDayOfYear(int y, int m, int d) {
-        int leftDays = 365 - d;
+    static int leftDayOfYear(int year, int month, int day) {
+        int leftDays = 365 - day;
 
-        for (int i = 1; i < m; i++) {
-            leftDays -= mDay[isLeap(y)][i - 1];
+        for (int i = 1; i < month; i++) {
+            leftDays -= mDay[isLeap(year)][i - 1];
         }
 
         return leftDays;

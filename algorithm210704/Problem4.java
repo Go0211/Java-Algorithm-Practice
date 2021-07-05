@@ -11,16 +11,16 @@ public class Problem4 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        ExampleAlgorithm6.PhyscData[] x = {
-                new ExampleAlgorithm6.PhyscData("강혜원", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("권은비", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("김채원", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("김민주", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("이채연", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("최예나", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("조유리", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("장원영", 162, 0.3),
-                new ExampleAlgorithm6.PhyscData("안유진", 162, 0.3),
+        ExampleAlgorithm6.PhysicalData[] x = {
+                new ExampleAlgorithm6.PhysicalData("강혜원", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("권은비", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("김채원", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("김민주", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("이채연", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("최예나", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("조유리", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("장원영", 162, 0.3),
+                new ExampleAlgorithm6.PhysicalData("안유진", 162, 0.3),
         };
 
         int[] vdist = new int[VMAX];
@@ -59,7 +59,7 @@ public class Problem4 {
     }
 
     //평균 키
-    static double aveHeight(ExampleAlgorithm6.PhyscData[] dat) {
+    static double aveHeight(ExampleAlgorithm6.PhysicalData[] dat) {
         double sum = 0;
 
         for (int i = 0; i < dat.length; i++) {
@@ -70,7 +70,7 @@ public class Problem4 {
     }
 
     //시력 분포(인원수를 별표로 표현)
-    static void distVision(ExampleAlgorithm6.PhyscData[] dat, int[] dist) {
+    static void distVision(ExampleAlgorithm6.PhysicalData[] dat, int[] dist) {
         int i = 0;
 
         dist[i] = 0;

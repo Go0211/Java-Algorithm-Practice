@@ -1,9 +1,9 @@
-package algorithm210707;
+package algorithm210708;
 
 import java.util.Scanner;
 
 //큐 생성 및 동작
-public class Problem4 {
+public class Problem1 {
 
     //메인
     public static void main(String[] args) {
@@ -75,9 +75,9 @@ public class Problem4 {
                     System.out.print("찾을 값 : ");
                     value = scan.nextInt();
 
-                    if (intQueue.indexOf(value) != -1) {
+                    if (intQueue.search(value) != -1) {
                         System.out.println(
-                                "찾는 값" + value + "은 [" + intQueue.indexOf(value) + "]에 있습니다."
+                                "찾는 값" + value + "은 " + intQueue.search(value) + "번째에 있습니다."
                         );
                     } else {
                         System.out.println("값이 없습니다.");
@@ -201,6 +201,21 @@ public class Problem4 {
                 if (queue[index] == searchValue) {
                     return index;
                 }
+            }
+
+            return -1;
+        }
+
+        //위치 검색
+        public int search(int searchValue) {
+            int searchIndex = indexOf(searchValue);
+
+            if (searchIndex == front) {
+                return 1;
+            } else if (searchIndex - front > 0 ) {
+                return searchIndex - front + 1;
+            } else if (searchIndex - front < 0) {
+                return max + searchIndex + 1 - front;
             }
 
             return -1;

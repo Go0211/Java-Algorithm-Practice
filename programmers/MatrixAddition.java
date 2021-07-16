@@ -1,9 +1,9 @@
-package algorithm210715;
+package programmers;
 
 import java.util.Scanner;
 
 //행렬간 덧셈
-public class levelOneProblem3 {
+public class MatrixAddition {
     //메인
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

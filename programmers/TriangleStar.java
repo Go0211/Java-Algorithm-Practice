@@ -1,9 +1,9 @@
-package algorithm210715;
+package programmers;
 
 import java.util.Scanner;
 
 //별로 사각형 찍기
-public class levelOneProblem1 {
+public class TriangleStar {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

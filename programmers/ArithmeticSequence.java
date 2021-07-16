@@ -1,9 +1,9 @@
-package algorithm210715;
+package programmers;
 
 import java.util.Scanner;
 
 //등차수열 구현
-public class levelOneProblem2 {
+public class ArithmeticSequence {
 
     //메인
     public static void main(String[] args) {

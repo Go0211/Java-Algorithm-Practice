@@ -7,7 +7,7 @@ public class ExampleAlgorithm1 {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
-        //내용물은 나중에 
+        //내용물은 나중에
     }
 }
 

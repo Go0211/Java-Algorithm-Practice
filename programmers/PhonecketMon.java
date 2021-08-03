@@ -16,7 +16,7 @@ public class PhonecketMon {
 
         int[] nums = new int[phonecketMonNum];
 
-        for(int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             System.out.print(i + " : ");
             nums[i] = scan.nextInt();
         }
@@ -30,13 +30,13 @@ public class PhonecketMon {
 
         Arrays.sort(nums);
 
-        for(int i = 0; i < nums.length - 1; i++) {
-            if(nums[i] != nums[i+1]) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] != nums[i + 1]) {
                 count++;
             }
         }
 
-        if((nums.length / 2) < count) {
+        if ((nums.length / 2) < count) {
             return nums.length / 2;
         } else {
             return count;

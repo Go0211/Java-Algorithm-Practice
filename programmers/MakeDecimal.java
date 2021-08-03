@@ -15,7 +15,7 @@ public class MakeDecimal {
 
         int[] nums = new int[size];
 
-        for(int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             System.out.print(i + " : ");
             nums[i] = scan.nextInt();
         }
@@ -32,23 +32,23 @@ public class MakeDecimal {
         ArrayList<Integer> list = new ArrayList<Integer>();
 
 
-        for(x = 0; x < nums.length - 2; x++) {
+        for (x = 0; x < nums.length - 2; x++) {
             y = x + 1;
 
-            for(; y < nums.length - 1; y++) {
+            for (; y < nums.length - 1; y++) {
                 z = y + 1;
 
-                for(; z < nums.length; z++) {
+                for (; z < nums.length; z++) {
                     num = nums[x] + nums[y] + nums[z];
 
-                    for(int i = 2; i < num; i++) {
-                        if(num % i == 0) {
+                    for (int i = 2; i < num; i++) {
+                        if (num % i == 0) {
                             check = false;
                             break;
                         }
                     }
 
-                    if(check == true) {
+                    if (check == true) {
                         answer++;
                     } else {
                         check = true;

@@ -17,14 +17,14 @@ public class DotProduct {
 
         System.out.println("첫 배열");
 
-        for(int i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length; i++) {
             System.out.print(i + " : ");
             a[i] = scan.nextInt();
         }
 
         System.out.println("마지막 배열");
 
-        for(int i = 0; i < b.length; i++) {
+        for (int i = 0; i < b.length; i++) {
             System.out.print(i + " : ");
             b[i] = scan.nextInt();
         }
@@ -36,7 +36,7 @@ public class DotProduct {
     private static int solution(int[] a, int[] b) {
         int answer = 0;
 
-        for(int i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length; i++) {
             answer += (a[i] * b[i]);
         }
 
